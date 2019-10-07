@@ -2,10 +2,7 @@
   "name": "xl-js-lib",
   "version": "0.0.3",
   "description": "我的xl-js-lib",
-  "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
+  "main": "index.js",
   "scripts": {
     "create": "hygen module with-prompt",
     "watch": "jest --watchAll",
@@ -21,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.winbaoxian.com:wy-front/bxs-js-tools.git"
+    "url": "git@github.com:TonyXiang/my-js-lib.git"
   },
   "husky": {
     "hooks": {

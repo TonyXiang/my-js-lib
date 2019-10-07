@@ -8,7 +8,7 @@
  * @param {string} a - 参数a的描述.
  * @throws {TypeError} 异常1的描述.
  * @throws {DOMError} 异常2的描述.
- * @author  xxx <xxx@winbaoxian.com>
+ * @author  xxx <xxx@gmail.com>
  * @example // returns 2
  * <%= name %>(1, 1)
  */
