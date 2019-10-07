@@ -7,7 +7,7 @@
     "create": "hygen module with-prompt",
     "watch": "jest --watchAll",
     "test": "jest",
-    "cp:pkg": "node ./build/copy-pak.js",
+    "cp:pkg": "node ./build/copy-pkg.js",
     "build": "node ./build/build.js",
     "build:doc": "node ./build/build-doc.js",
     "build:all": "node ./build/build.js && node ./build/build-doc.js",
