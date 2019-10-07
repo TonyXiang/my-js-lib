@@ -1,6 +1,6 @@
 {
   "name": "xl-js-lib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "我的xl-js-lib",
   "main": "lib/index.js",
   "files": [
