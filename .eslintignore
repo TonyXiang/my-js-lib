@@ -1,0 +1,6 @@
+/_templates/
+/build/
+/jestConfig/
+/coverage/
+/lib/
+/*.js

@@ -1,0 +1,17 @@
+---
+  to: src/<%= name %>/<%= name %>.ts
+---
+/**
+ * 总体的描述
+ * @function <%= name %>
+ * @returns {string}
+ * @param {string} a - 参数a的描述.
+ * @throws {TypeError} 异常1的描述.
+ * @throws {DOMError} 异常2的描述.
+ * @author  xxx <xxx@winbaoxian.com>
+ * @example // returns 2
+ * <%= name %>(1, 1)
+ */
+export default function <%= name %>() {
+  return
+}

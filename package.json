@@ -1,0 +1,130 @@
+{
+  "name": "xl-js-lib",
+  "version": "0.0.0",
+  "description": "我的xl-js-lib",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "create": "hygen module with-prompt",
+    "watch": "jest --watchAll",
+    "test": "jest",
+    "cp:pkg": "node ./build/copy-pak.js",
+    "build": "node ./build/build.js",
+    "build:doc": "node ./build/build-doc.js",
+    "build:all": "node ./build/build.js && node ./build/build-doc.js",
+    "eslint": "eslint --ext .js .",
+    "eslint:fix": "eslint --ext .js . --fix",
+    "tslint": "tslint -c ./tslint.json -p ./tsconfig.json",
+    "tslint:fix": "tslint -c ./tslint.json -p ./tsconfig.json --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.winbaoxian.com:wy-front/bxs-js-tools.git"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "roles": {
+      "header-max-length": [
+        2,
+        "always",
+        100
+      ]
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "maxHeaderWidth": 100,
+      "maxLineWidth": 100
+    }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname",
+      "./jestConfig/jest-lint-watch-plugin.js"
+    ],
+    "projects": [
+      {
+        "displayName": {
+          "name": "Jest",
+          "color": "magenta"
+        },
+        "testMatch": [
+          "<rootDir>/src/**/*.test.js"
+        ],
+        "preset": "ts-jest/presets/js-with-babel"
+      },
+      {
+        "displayName": {
+          "name": "ESLint",
+          "color": "blue"
+        },
+        "runner": "jest-runner-eslint",
+        "testMatch": [
+          "<rootDir>/src/**/*.js"
+        ]
+      },
+      {
+        "displayName": {
+          "name": "TSLint",
+          "color": "cyan"
+        },
+        "runner": "jest-runner-tslint",
+        "testMatch": [
+          "<rootDir>/src/**/*.ts"
+        ]
+      }
+    ],
+    "globalSetup": "./jestConfig/global-setup.js",
+    "globalTeardown": "./jestConfig/teardown.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/jest": "^24.0.18",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.18.2",
+    "express": "^4.17.1",
+    "husky": "^3.0.5",
+    "hygen": "^4.0.9",
+    "jest": "^24.9.0",
+    "jest-runner-eslint": "^0.7.4",
+    "jest-runner-tslint": "^1.0.5",
+    "jest-watch-typeahead": "^0.4.0",
+    "jsdoc-to-markdown": "^5.0.1",
+    "prettier": "^1.18.2",
+    "prettier-tslint": "^0.4.2",
+    "puppeteer": "^1.20.0",
+    "puppeteer-core": "^1.20.0",
+    "rollup": "^1.21.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-filesize": "^6.2.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.6.3"
+  }
+}
